@@ -1,0 +1,12 @@
+---
+name: MobMorph
+author: IvanCraft623
+version: 0.1.1
+main: IvanCraft623\MobMorph\MobMorph
+api: "5.16.0"
+description: "Morph into a mob and use their abilities"
+permissions:
+  mobmorph.command:
+    default: true
+    description: "Access to MobMorph command"
+...

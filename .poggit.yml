@@ -1,0 +1,16 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/IvanCraft623/MobMorph
+build-by-default: true
+projects:
+  MobMorph:
+    path: ""
+    icon: "icon.png"
+    excludeDirs:
+      - .github
+    excludeFiles:
+      - .gitignore
+      - .php-cs-fixer.php
+      - phpstan.neon.dist
+    libs:
+      - src: LatamPMDevs/FormAPI/libFormAPI
+        version: ^2.1.1
+...

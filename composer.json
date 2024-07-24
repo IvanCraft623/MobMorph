@@ -1,0 +1,42 @@
+{
+    "name": "ivancraft623/mobmorph",
+    "description": "A PocketMine-MP plugin to morph into a mob and use their abilities",
+    "type": "project",
+    "license": "LGPL-3.0",
+    "require": {
+        "latampmdevs/update-notifier": "dev-master",
+        "latampmdevs/formapi": "dev-master",
+        "ivancraft623/languages": "dev-main"
+    },
+    "require-dev": {
+        "php": "^8.0",
+        "pocketmine/pocketmine-mp": "^5.16.0",
+        "phpstan/phpstan": "1.10.25"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/LatamPMDevs/UpdateNotifier.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/LatamPMDevs/FormAPI.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/IvanCraft623/languages.git"
+        }
+    ],
+    "minimum-stability": "dev",
+    "config": {
+        "platform": {
+            "php": "8.1"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-0": {
+            "IvanCraft623\\MobMorph\\": "src"
+        }
+    }
+}
