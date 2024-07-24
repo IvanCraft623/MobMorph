@@ -11,7 +11,7 @@
     "require-dev": {
         "php": "^8.0",
         "pocketmine/pocketmine-mp": "^5.16.0",
-        "phpstan/phpstan": "1.10.25"
+        "phpstan/phpstan": "1.11.8"
     },
     "repositories": [
         {
