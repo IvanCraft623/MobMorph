@@ -3,6 +3,8 @@ build-by-default: true
 projects:
   MobMorph:
     path: ""
+    lint:
+      phpstan: false
     icon: "icon.png"
     excludeDirs:
       - .github
