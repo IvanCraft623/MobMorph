@@ -20,7 +20,7 @@ Have you ever thought of surprising your friends by transforming into a mob, or 
 # 🧩 Installation
 
 1. Download the PHAR from [poggit](https://poggit.pmmp.io/ci/IvanCraft623/MobMorph/MobMorph) and paste it in the `plugins` directory of your server.
-2. Download [Morph Addon form MCPEDL](https://mcpedl.com/morph-addon-alpha/#downloads).
+2. Download `Morph Addon` form [ModBay](https://modbay.org/mods/1757-morphing-bracelet.html#download-links-section) or [MCPEDL](https://mcpedl.com/morph-addon-alpha/#downloads).
 3. Change addon extension from `.mcaddon` to `.zip`
 4. Extract the addon ZIP file.
 5. Only ZIP the `resource_pack` file, name the ZIP file whatever you want (eg. `MobMorphResourcePack.zip`). Your ZIP file stucture should look like this:
