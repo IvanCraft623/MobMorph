@@ -7,6 +7,6 @@ api: "5.16.0"
 description: "Morph into a mob and use their abilities"
 permissions:
   mobmorph.command:
-    default: true
+    default: "op"
     description: "Access to MobMorph command"
 ...
