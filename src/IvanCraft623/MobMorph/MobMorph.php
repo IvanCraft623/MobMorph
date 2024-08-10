@@ -164,12 +164,11 @@ class MobMorph extends PluginBase{
 	/**
 	 * @template T of Morph
 	 *
-	 * @phpstan-param ?class-string<T> $morphClass
-	 * @phpstan-param ?MorphVariant<T> $variant
+	 * @phpstan-param MorphVariant<T>|class-string<T>|null $morphSource
 	 *
 	 * @phpstan-return ?T
 	 */
-	public function setMorph(Player $player, ?string $morphClass, ?MorphVariant $variant = null) : ?Morph{
+	public function setMorph(Player $player, MorphVariant|string|null $morphSource) : ?Morph{
 		$this->initMorphMapIfneeded();
 
 		if (isset($this->playersMorph[$player])) {
@@ -177,16 +176,17 @@ class MobMorph extends PluginBase{
 		}
 
 		$morph = null;
-		if ($morphClass === null) {
+		if ($morphSource === null) {
 			unset($this->playersMorph[$player]);
+		}elseif ($morphSource instanceof MorphVariant) {
+			$morph = $morphSource->create($player);
 		} else {
-			$morph = new $morphClass($player);
-			$variant?->create($morph);
-			$morph->setup();
-			$this->playersMorph[$player] = $morph;
+			$morph = new $morphSource($player);
 		}
 
+		$morph?->setup();
 		$player->sendData(null);
+
 		return $morph;
 	}
 

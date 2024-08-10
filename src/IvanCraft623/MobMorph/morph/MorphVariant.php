@@ -24,14 +24,16 @@ declare(strict_types=1);
 
 namespace IvanCraft623\MobMorph\morph;
 
+use pocketmine\player\Player;
+
 /**
- * @phpstan-template T of Morph
+ * @template-covariant TMorph of Morph
  */
 final class MorphVariant{
 
 	/**
-	 * @phpstan-param class-string<T> $morphClass
-	 * @phpstan-param \Closure(T) : T $creationFunc
+	 * @phpstan-param class-string<TMorph> $morphClass
+	 * @phpstan-param \Closure(TMorph) : TMorph $creationFunc
 	 */
 	public function __construct(
 		private string $morphClass,
@@ -40,18 +42,17 @@ final class MorphVariant{
 	) {}
 
 	/**
-	 * @phpstan-return class-string<T>
+	 * @phpstan-return class-string<TMorph>
 	 */
 	public function getMorphClass() : string{
 		return $this->morphClass;
 	}
 
 	/**
-	 * @phpstan-param T $morph
-	 * @phpstan-return T
+	 * @phpstan-return TMorph
 	 */
-	public function create(Morph $morph) : Morph{
-		return ($this->creationFunc)($morph);
+	public function create(Player $player) : Morph{
+		return ($this->creationFunc)(new ($this->morphClass)($player));
 	}
 
 	public function getIconPath() : string{

@@ -57,9 +57,9 @@ final class FormManager {
 
 			$variants = MorphManager::getInstance()->getVariants($morph);
 			if (count($variants) === 1) {
-				MobMorph::getInstance()->setMorph($player, $morph, $variants[0]);
+				MobMorph::getInstance()->setMorph($player, $variants[0]);
 			} else {
-				self::sendSelectMorphVariant($player, $morph, $variants);
+				self::sendSelectMorphVariant($player, $variants);
 			}
 
 		});
@@ -82,16 +82,15 @@ final class FormManager {
 	}
 
 	/**
-	 * @phpstan-param class-string<Morph> $morph
 	 * @phpstan-param non-empty-list<MorphVariant<Morph>> $variants
 	 */
-	public function sendSelectMorphVariant(Player $player, string $morph, array $variants) : void{
-		$form = new SimpleForm(function (Player $player, ?MorphVariant $variant = null) use ($morph) {
+	public function sendSelectMorphVariant(Player $player, array $variants) : void{
+		$form = new SimpleForm(function (Player $player, ?MorphVariant $variant = null) {
 			if ($variant === null) {
 				return;
 			}
 
-			MobMorph::getInstance()->setMorph($player, $morph, $variant);
+			MobMorph::getInstance()->setMorph($player, $variant);
 
 		});
 		$form->setTitle("Morph menu");
