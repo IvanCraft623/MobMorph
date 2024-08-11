@@ -24,6 +24,7 @@ declare(strict_types=1);
 
 namespace IvanCraft623\MobMorph\morph;
 
+use IvanCraft623\MobMorph\morph\animal\ChickenMorph;
 use IvanCraft623\MobMorph\morph\animal\CowMorph;
 use IvanCraft623\MobMorph\morph\monster\SkeletonMorph;
 use IvanCraft623\MobMorph\morph\monster\ZombieMorph;
@@ -54,6 +55,7 @@ final class MorphManager {
 		$this->register(ZombieMorph::class);
 		$this->register(SkeletonMorph::class);
 		$this->register(CowMorph::class);
+		$this->register(ChickenMorph::class);
 	}
 
 	/**

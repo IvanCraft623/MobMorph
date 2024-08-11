@@ -184,7 +184,11 @@ class MobMorph extends PluginBase{
 			$morph = new $morphSource($player);
 		}
 
-		$morph?->setup();
+		if ($morph !== null) {
+			$this->playersMorph[$player] = $morph;
+			$morph->setup();
+		}
+
 		$player->sendData(null);
 
 		return $morph;
